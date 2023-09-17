@@ -1,29 +1,28 @@
+#define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
-#include <stdio.h>
-#include <vector>
-#include <algorithm>
-
+#include <cstring>
 using namespace std;
 
-int main()
-{
-	vector<string> arr;
-	string temp;
-	cin >> temp;
-	while(temp!="0") {
-		arr.push_back(temp);
-		cin >> temp;
-	}
-	for (int i = 0; i < arr.size(); i++) {
-		temp = arr[i];
-		reverse(arr[i].begin(), arr[i].end());
-		if (arr[i] == temp)
-			arr[i] = "yes";
-		else
-			arr[i] = "no";
-	}
-	for (const string& answer : arr) {
-		cout << answer << endl;
-	}
+int main() {
+    char arr[99999];
+    
+    while (true) {
+        cin >> arr;
+        
+        if (arr[0] == '0') break;
+        
+        int len = strlen(arr);
+        bool isPel = true; // 여기에서 초기화합니다.
 
+        for(int i = 0; i < len/2; i++) { // for 루프를 사용해 코드를 간소화합니다.
+            if (arr[i] != arr[len - 1 - i]) {
+                isPel = false;
+                break;
+            }
+        }
+
+        if (isPel) cout << "yes" << endl;
+        else cout << "no" << endl;
+    }
+    return 0;
 }
