@@ -1,13 +1,10 @@
 #include <iostream>
 #include <algorithm>
-#define INF 987654321
+#define INF 999999999
 using namespace std;
 
 int n, m;
 int dp[101][101];
-int len(int f, int e) {
-
-}
 int main() {
 	cin >> n >> m;
 	for (int i = 1; i <= n; i++) {
@@ -19,9 +16,9 @@ int main() {
 		}
 	}
 	for (int i = 0; i < m; i++) {
-		int from, to, cost;
-		cin >> from >> to >> cost;
-		dp[from][to] = min(dp[from][to], cost);
+		int f, t, c;
+		cin >> f >> t >> c;
+		dp[f][t] = min(dp[f][t], c);
 	}
 	for (int k = 1; k <= n; k++) {
 		for (int i = 1; i <= n; i++) {
