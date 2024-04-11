@@ -1,4 +1,3 @@
-# 참고함
 from itertools import combinations, product
 from bisect import bisect_left
 
