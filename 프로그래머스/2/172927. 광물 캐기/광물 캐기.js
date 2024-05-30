@@ -1,10 +1,8 @@
 function solution(picks, minerals) {
   var answer = 0;
   var cutCount = Math.ceil(minerals.length/5);
-  // 곡갱이 개수
   let maxLen = picks.reduce((a, b) => a + b);
   if (maxLen === 0) return 0;
-  // 최대 구할수 있는 개수 빼고 제거
   minerals = minerals.splice(0,maxLen*5);
   var arr = [];
   for(var i = 0;i<cutCount;i++){
